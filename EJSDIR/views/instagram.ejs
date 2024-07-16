@@ -1,0 +1,21 @@
+<%- include("includes/head.ejs") %>// before include does not put / 
+<body>
+<div class="text-center border justify-center  ">
+    
+    <h1 class="text-amber-500">this page belongs to <%=data.name  %></h1>
+    <button>Follow</button>
+    <button class="ml-10">Message</button>
+    <br><br>
+
+   <b> <p class="text-cyan-200">Followers: <%= data.followers %>  &nbsp;  &nbsp;  &nbsp;  Following: <%= data.following %>  </p></b>
+   <hr>
+   <% for( let post of data.posts){ %>
+    <img  src="<%= post.image %>" class="h-24 w-24 rounded-md "/>
+   <b> <p class="text-red-300">
+        Likes: <%= post.likes %> &nbsp;&nbsp;&nbsp;<%= post.comments %>
+    </p></b>
+
+   <% } %>
+</div>
+</body>
+</html>

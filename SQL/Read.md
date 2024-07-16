@@ -1,0 +1,1 @@
+we use the faker npm // npm i @faker-js/faker   to create the faker data in databases.

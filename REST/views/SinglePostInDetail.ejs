@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail about Posts</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body class="bg-gray-100 mt-40 ">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-3xl text-center mb-6 text-orange-500 font-bold">Here is your Detail Post</h1>
+        
+        <div class="space-y-4">
+            <h3 class="p-3 text-lg text-red-600 bg-yellow-100 rounded">User post ID Is: <span class="font-semibold"><%= post.id %></span></h3>
+            <h2 class="italic bg-yellow-100 text-purple-700 p-3 rounded">@<%= post.username %></h2>
+            <h2 class="bg-yellow-100 text-pink-600 p-3 rounded"><%= post.content %></h2>
+        </div>
+        <form method="get" action="/posts">
+             <button type="submit" class="w-auto bg-blue-600 text-white px-4 py-2 my-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">Back To All Posts</button>
+        </form>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/style.css" />
+  <title>All Posts</title>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl text-amber-900 text-center mb-8 font-bold">Quora Posts</h1>
+      <div class="border-b-4 m-4">
+          <% for(let post of posts) { %>
+          <div class="mb-5 p-4 bg-white rounded-lg shadow-md">
+              <h2 class="italic text-lg bg-yellow-200 text-purple-700 p-3 rounded-t">
+                  @<%= post.username %>
+              </h2>
+              <h1 class="text-base bg-yellow-200 text-pink-600 p-3 rounded-b mb-4">
+                  <%= post.content %>
+              </h1>
+              <a href="http://localhost:8080/posts/<%= post.id %>" class="text-center text-white ml-1 bg-blue-500 hover:bg-blue-600 p-3 rounded-md mt-6">
+                  See In Detail
+              </a>
+              <a href="http://localhost:8080/posts/<%= post.id %>/edit" class="text-center text-white ml-1 bg-blue-500 hover:bg-blue-600 p-3 rounded-md mt-6">
+                Edit Content
+            </a>
+           
+                <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+                <button class="mt-3 mx-2 underline">DELETE POST</button>
+
+            </form>
+    
+          </div>
+          <% } %>
+
+      </div>
+      <a href="http://localhost:8080/posts/new" class="text-center text-white ml-4 bg-blue-500 hover:bg-blue-600 p-3 rounded-md mt-6">
+          Create New Posts
+      </a>
+  </div>
+</body>
+
+</html>
